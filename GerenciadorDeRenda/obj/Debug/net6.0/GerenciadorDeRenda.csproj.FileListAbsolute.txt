@@ -25,3 +25,13 @@ C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda
 C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\obj\Debug\net6.0\GerenciadorDeRenda.pdb
 C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\obj\Debug\net6.0\GerenciadorDeRenda.genruntimeconfig.cache
 C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\obj\Debug\net6.0\ref\GerenciadorDeRenda.dll
+C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\bin\Debug\net6.0\Humanizer.dll
+C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\bin\Debug\net6.0\Npgsql.dll
+C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\bin\Debug\net6.0\GerenciadorDeRendaInfra.dll
+C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\bin\Debug\net6.0\GerenciadorDeRendaInfra.pdb
