@@ -447,10 +447,21 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "GerenciadorDeRendaDomain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/GerenciadorDeRendaDomain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GerenciadorDeRendaDomain.dll": {}
+        }
+      },
       "GerenciadorDeRendaInfra/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "GerenciadorDeRendaDomain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.9",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.7"
         },
@@ -1038,6 +1049,11 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "GerenciadorDeRendaDomain/1.0.0": {
+      "type": "project",
+      "path": "../GerenciadorDeRendaDomain/GerenciadorDeRendaDomain.csproj",
+      "msbuildProject": "../GerenciadorDeRendaDomain/GerenciadorDeRendaDomain.csproj"
     },
     "GerenciadorDeRendaInfra/1.0.0": {
       "type": "project",

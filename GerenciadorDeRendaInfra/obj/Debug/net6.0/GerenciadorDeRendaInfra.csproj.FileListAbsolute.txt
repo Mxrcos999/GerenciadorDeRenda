@@ -10,3 +10,6 @@ C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda
 C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRendaInfra\obj\Debug\net6.0\refint\GerenciadorDeRendaInfra.dll
 C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRendaInfra\obj\Debug\net6.0\GerenciadorDeRendaInfra.pdb
 C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRendaInfra\obj\Debug\net6.0\ref\GerenciadorDeRendaInfra.dll
+C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRendaInfra\bin\Debug\net6.0\GerenciadorDeRendaDomain.dll
+C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRendaInfra\bin\Debug\net6.0\GerenciadorDeRendaDomain.pdb
+C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRendaInfra\obj\Debug\net6.0\GerenciadorDeRendaInfra.csproj.CopyComplete

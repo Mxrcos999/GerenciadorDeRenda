@@ -314,6 +314,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "GerenciadorDeRendaDomain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/GerenciadorDeRendaDomain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GerenciadorDeRendaDomain.dll": {}
+        }
       }
     }
   },
@@ -711,10 +721,16 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "GerenciadorDeRendaDomain/1.0.0": {
+      "type": "project",
+      "path": "../GerenciadorDeRendaDomain/GerenciadorDeRendaDomain.csproj",
+      "msbuildProject": "../GerenciadorDeRendaDomain/GerenciadorDeRendaDomain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "GerenciadorDeRendaDomain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.9",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 6.0.7"
     ]
@@ -753,7 +769,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\MarcosFelipeSilvaCel\\source\\repos\\GerenciadorDeRenda\\GerenciadorDeRendaDomain\\GerenciadorDeRendaDomain.csproj": {
+              "projectPath": "C:\\Users\\MarcosFelipeSilvaCel\\source\\repos\\GerenciadorDeRenda\\GerenciadorDeRendaDomain\\GerenciadorDeRendaDomain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

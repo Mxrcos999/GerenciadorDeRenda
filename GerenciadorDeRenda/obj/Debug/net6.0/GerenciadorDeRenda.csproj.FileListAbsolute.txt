@@ -35,3 +35,5 @@ C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda
 C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\bin\Debug\net6.0\GerenciadorDeRendaInfra.dll
 C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\bin\Debug\net6.0\GerenciadorDeRendaInfra.pdb
+C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\bin\Debug\net6.0\GerenciadorDeRendaDomain.dll
+C:\Users\MarcosFelipeSilvaCel\source\repos\GerenciadorDeRenda\GerenciadorDeRenda\bin\Debug\net6.0\GerenciadorDeRendaDomain.pdb
