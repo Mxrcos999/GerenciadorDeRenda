@@ -7,6 +7,5 @@ namespace GerenciadorDeRendaDomain.Entidades
         public decimal? Saldo { get; set; }
         public decimal? Saida { get; set; }
         public decimal? Entrada { get; set; }
-        public Previsao Previsao { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace GerenciadorDeRendaInfra.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.9")
+                .HasAnnotation("ProductVersion", "6.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -62,9 +62,6 @@ namespace GerenciadorDeRendaInfra.Migrations
                     b.Property<decimal?>("Entrada")
                         .HasColumnType("numeric");
 
-                    b.Property<string>("PrevisaoId")
-                        .HasColumnType("text");
-
                     b.Property<decimal?>("Saida")
                         .HasColumnType("numeric");
 
@@ -72,8 +69,6 @@ namespace GerenciadorDeRendaInfra.Migrations
                         .HasColumnType("numeric");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("PrevisaoId");
 
                     b.ToTable("Conta");
                 });
@@ -105,15 +100,6 @@ namespace GerenciadorDeRendaInfra.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Previsao");
-                });
-
-            modelBuilder.Entity("GerenciadorDeRendaDomain.Entidades.Conta", b =>
-                {
-                    b.HasOne("GerenciadorDeRendaDomain.Entidades.Previsao", "Previsao")
-                        .WithMany()
-                        .HasForeignKey("PrevisaoId");
-
-                    b.Navigation("Previsao");
                 });
 #pragma warning restore 612, 618
         }
