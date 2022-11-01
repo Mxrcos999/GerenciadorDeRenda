@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using GerenciadorDeRendaDomain.Entidades;
 using GerenciadorDeRendaInfra.Context;
+using GerenciadorDeRendaApp.Interfaces;
 
 namespace GerenciadorDeRenda.Controllers
 {
@@ -15,10 +16,13 @@ namespace GerenciadorDeRenda.Controllers
     public class ContasController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly ISvcConta _svcConta;
 
-        public ContasController(AppDbContext context)
+
+        public ContasController(AppDbContext context, ISvcConta svcConta)
         {
             _context = context;
+            _svcConta = svcConta;
         }
 
         // GET: api/Contas
@@ -30,7 +34,7 @@ namespace GerenciadorDeRenda.Controllers
 
         // GET: api/Contas/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Conta>> GetConta(string id)
+        public async Task<ActionResult<Conta>> GetConta(int id)
         {
             var conta = await _context.Conta.FindAsync(id);
 
@@ -45,7 +49,7 @@ namespace GerenciadorDeRenda.Controllers
         // PUT: api/Contas/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutConta(string id, Conta conta)
+        public async Task<IActionResult> PutConta(int id, Conta conta)
         {
             if (id != conta.Id)
             {
@@ -78,29 +82,16 @@ namespace GerenciadorDeRenda.Controllers
         [HttpPost]
         public async Task<ActionResult<Conta>> PostConta(Conta conta)
         {
+            _svcConta.AdicionaSaldo(conta);
             _context.Conta.Add(conta);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (ContaExists(conta.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetConta", new { id = conta.Id }, conta);
         }
 
         // DELETE: api/Contas/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteConta(string id)
+        public async Task<IActionResult> DeleteConta(int id)
         {
             var conta = await _context.Conta.FindAsync(id);
             if (conta == null)
@@ -114,7 +105,7 @@ namespace GerenciadorDeRenda.Controllers
             return NoContent();
         }
 
-        private bool ContaExists(string id)
+        private bool ContaExists(int id)
         {
             return _context.Conta.Any(e => e.Id == id);
         }

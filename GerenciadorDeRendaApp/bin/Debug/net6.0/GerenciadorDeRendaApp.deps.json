@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "GerenciadorDeRendaApp/1.0.0": {
+        "dependencies": {
+          "GerenciadorDeRendaDomain": "1.0.0"
+        },
         "runtime": {
           "GerenciadorDeRendaApp.dll": {}
+        }
+      },
+      "GerenciadorDeRendaDomain/1.0.0": {
+        "runtime": {
+          "GerenciadorDeRendaDomain.dll": {}
         }
       }
     }
   },
   "libraries": {
     "GerenciadorDeRendaApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GerenciadorDeRendaDomain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

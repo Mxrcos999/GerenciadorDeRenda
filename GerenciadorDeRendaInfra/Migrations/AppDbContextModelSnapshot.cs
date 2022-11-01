@@ -25,8 +25,11 @@ namespace GerenciadorDeRendaInfra.Migrations
 
             modelBuilder.Entity("GerenciadorDeRendaDomain.Entidades.Categorias", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("text");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<List<string>>("Compras")
                         .HasColumnType("text[]");
@@ -50,8 +53,50 @@ namespace GerenciadorDeRendaInfra.Migrations
 
             modelBuilder.Entity("GerenciadorDeRendaDomain.Entidades.Conta", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("text");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DataAlteracao")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("timestamp with time zone")
+                        .HasDefaultValueSql("now()");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("timestamp with time zone")
+                        .HasDefaultValueSql("now()");
+
+                    b.Property<int>("EntradaId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("SaidaId")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal?>("Saldo")
+                        .HasColumnType("numeric");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EntradaId");
+
+                    b.HasIndex("SaidaId");
+
+                    b.ToTable("Conta");
+                });
+
+            modelBuilder.Entity("GerenciadorDeRendaDomain.Entidades.Entrada", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ContaId")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("DataAlteracao")
                         .HasColumnType("timestamp with time zone");
@@ -59,24 +104,29 @@ namespace GerenciadorDeRendaInfra.Migrations
                     b.Property<DateTime>("DataCriacao")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<decimal?>("Entrada")
-                        .HasColumnType("numeric");
+                    b.Property<DateTime>("DataEntrada")
+                        .HasColumnType("timestamp with time zone");
 
-                    b.Property<decimal?>("Saida")
-                        .HasColumnType("numeric");
+                    b.Property<string>("Descricao")
+                        .HasColumnType("text");
 
-                    b.Property<decimal?>("Saldo")
+                    b.Property<decimal?>("Valor")
                         .HasColumnType("numeric");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Conta");
+                    b.HasIndex("ContaId");
+
+                    b.ToTable("Entrada");
                 });
 
             modelBuilder.Entity("GerenciadorDeRendaDomain.Entidades.Previsao", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("text");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("DataAlteracao")
                         .HasColumnType("timestamp with time zone");
@@ -100,6 +150,87 @@ namespace GerenciadorDeRendaInfra.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Previsao");
+                });
+
+            modelBuilder.Entity("GerenciadorDeRendaDomain.Entidades.Saida", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ContaId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("DataAlteracao")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("DataEntrada")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("text");
+
+                    b.Property<decimal?>("Valor")
+                        .HasColumnType("numeric");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ContaId");
+
+                    b.ToTable("Saida");
+                });
+
+            modelBuilder.Entity("GerenciadorDeRendaDomain.Entidades.Conta", b =>
+                {
+                    b.HasOne("GerenciadorDeRendaDomain.Entidades.Entrada", "Entradas")
+                        .WithMany()
+                        .HasForeignKey("EntradaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("GerenciadorDeRendaDomain.Entidades.Saida", "Saidas")
+                        .WithMany()
+                        .HasForeignKey("SaidaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Entradas");
+
+                    b.Navigation("Saidas");
+                });
+
+            modelBuilder.Entity("GerenciadorDeRendaDomain.Entidades.Entrada", b =>
+                {
+                    b.HasOne("GerenciadorDeRendaDomain.Entidades.Conta", "Conta")
+                        .WithMany("Entrada")
+                        .HasForeignKey("ContaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Conta");
+                });
+
+            modelBuilder.Entity("GerenciadorDeRendaDomain.Entidades.Saida", b =>
+                {
+                    b.HasOne("GerenciadorDeRendaDomain.Entidades.Conta", "Conta")
+                        .WithMany("Saida")
+                        .HasForeignKey("ContaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Conta");
+                });
+
+            modelBuilder.Entity("GerenciadorDeRendaDomain.Entidades.Conta", b =>
+                {
+                    b.Navigation("Entrada");
+
+                    b.Navigation("Saida");
                 });
 #pragma warning restore 612, 618
         }

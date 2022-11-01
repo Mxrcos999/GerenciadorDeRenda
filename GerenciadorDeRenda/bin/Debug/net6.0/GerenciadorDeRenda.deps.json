@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "GerenciadorDeRenda/1.0.0": {
         "dependencies": {
+          "GerenciadorDeRendaApp": "1.0.0",
           "GerenciadorDeRendaInfra": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.10",
@@ -2298,6 +2299,14 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
+      "GerenciadorDeRendaApp/1.0.0": {
+        "dependencies": {
+          "GerenciadorDeRendaDomain": "1.0.0"
+        },
+        "runtime": {
+          "GerenciadorDeRendaApp.dll": {}
+        }
+      },
       "GerenciadorDeRendaDomain/1.0.0": {
         "runtime": {
           "GerenciadorDeRendaDomain.dll": {}
@@ -3566,6 +3575,11 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
+    },
+    "GerenciadorDeRendaApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "GerenciadorDeRendaDomain/1.0.0": {
       "type": "project",

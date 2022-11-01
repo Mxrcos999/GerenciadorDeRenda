@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GerenciadorDeRendaDomain\GerenciadorDeRendaDomain.csproj" />
+  </ItemGroup>
+
 </Project>

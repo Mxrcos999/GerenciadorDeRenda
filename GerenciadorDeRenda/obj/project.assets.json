@@ -3587,6 +3587,19 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "GerenciadorDeRendaApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "GerenciadorDeRendaDomain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GerenciadorDeRendaApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GerenciadorDeRendaApp.dll": {}
+        }
+      },
       "GerenciadorDeRendaDomain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -10354,6 +10367,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "GerenciadorDeRendaApp/1.0.0": {
+      "type": "project",
+      "path": "../GerenciadorDeRendaApp/GerenciadorDeRendaApp.csproj",
+      "msbuildProject": "../GerenciadorDeRendaApp/GerenciadorDeRendaApp.csproj"
+    },
     "GerenciadorDeRendaDomain/1.0.0": {
       "type": "project",
       "path": "../GerenciadorDeRendaDomain/GerenciadorDeRendaDomain.csproj",
@@ -10367,6 +10385,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "GerenciadorDeRendaApp >= 1.0.0",
       "GerenciadorDeRendaInfra >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.10",
@@ -10411,6 +10430,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\MarcosFelipeSilvaCel\\source\\repos\\GerenciadorDeRenda\\GerenciadorDeRendaApp\\GerenciadorDeRendaApp.csproj": {
+              "projectPath": "C:\\Users\\MarcosFelipeSilvaCel\\source\\repos\\GerenciadorDeRenda\\GerenciadorDeRendaApp\\GerenciadorDeRendaApp.csproj"
+            },
             "C:\\Users\\MarcosFelipeSilvaCel\\source\\repos\\GerenciadorDeRenda\\GerenciadorDeRendaInfra\\GerenciadorDeRendaInfra.csproj": {
               "projectPath": "C:\\Users\\MarcosFelipeSilvaCel\\source\\repos\\GerenciadorDeRenda\\GerenciadorDeRendaInfra\\GerenciadorDeRendaInfra.csproj"
             }
